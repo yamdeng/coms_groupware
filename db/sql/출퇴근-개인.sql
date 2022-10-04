@@ -1,0 +1,11 @@
+/* 개인 출퇴근(팀원) : #{월} 출퇴근 현황 (33P) */
+SELECT 
+    OCD.*
+FROM OFFICE6.OFFICE_COMMUTE_DAY OCD
+WHERE OCD.BASE_DATE_STR = SUBSTR('202210')
+AND OCD.USER_ID = 'yamdeng';
+
+
+
+
+
