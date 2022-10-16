@@ -1,11 +1,18 @@
-### 통계_출퇴근_월간_주별 ###
+### 통계_출퇴근_월간_주별 ### : OFFICE_COMMUTE_MONTH_D_STATS
  
- #.직원ID
- #.기준년월
- #.누적근무시간
- #.1주 근무시간
- #.2주 근무시간
- #.3주 근무시간
- #.4주 근무시간
- #.5주 근무시간
- #.6주 근무시간
+ #.직원ID : USER_ID (VARCHAR(50))
+ #.기준년월 : BASE_MONTH_STR (VARCHAR(6))
+ #.누적근무시간 : SUM_WORK_TIME_VALUE (DOUBLE)
+ #.1주 근무시간 : FIRST_WEEK_TIME_VALUE (DOUBLE)
+ #.2주 근무시간 : SECOND_WEEK_TIME_VALUE (DOUBLE)
+ #.3주 근무시간 : THREE_WEEK_TIME_VALUE (DOUBLE)
+ #.4주 근무시간 : FOUR_WEEK_TIME_VALUE (DOUBLE)
+ #.5주 근무시간 : FIVE_WEEK_TIME_VALUE (DOUBLE)
+ #.6주 근무시간 : SIX_WEEK_TIME_VALUE (DOUBLE)
+
+
+### 인덱스 ###
+
+ #.BASE_MONTH_STR
+
+ (U) #.BASE_MONTH_STR, USER_ID

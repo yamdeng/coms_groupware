@@ -1,12 +1,19 @@
-### 통계_출퇴근_주간 ###
+### 통계_출퇴근_주간 ### : OFFICE_COMMUTE_WEEK_STATS
  
- #.직원ID
- #.월요일 시작 일
- #.누적근무시간(월~일)
- #.월 근무시간
- #.화 근무시간
- #.수 근무시간
- #.목 근무시간
- #.금 근무시간
- #.토 근무시간
- #.일 근무시간
+ #.직원ID : USER_ID (VARCHAR(50))
+ #.월요일 시작 일 : MONDAY_START_DATE_STR (VARCHAR(8))
+ #.누적근무시간 : SUM_WORK_TIME_VALUE (DOUBLE)
+ #.월 근무시간 : MON_WORK_TIME_VALUE (DOUBLE)
+ #.화 근무시간 : TUE_WORK_TIME_VALUE (DOUBLE)
+ #.수 근무시간 : WED_WORK_TIME_VALUE (DOUBLE)
+ #.목 근무시간 : THU_WORK_TIME_VALUE (DOUBLE)
+ #.금 근무시간 : FRI_WORK_TIME_VALUE (DOUBLE)
+ #.토 근무시간 : SAT_WORK_TIME_VALUE (DOUBLE)
+ #.일 근무시간 : SUN_WORK_TIME_VALUE (DOUBLE)
+
+
+### 인덱스 ###
+
+ #.MONDAY_START_DATE_STR
+
+ (U) #.MONDAY_START_DATE_STR, USER_ID
