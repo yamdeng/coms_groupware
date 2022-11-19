@@ -1,24 +1,41 @@
-/* 포탈 팀원인 경우 : 금일 출근 정보 (17p) */
-SELECT 
-    OCD.*
-FROM OFFICE6.OFFICE_COMMUTE_DAY OCD
-WHERE OCD.BASE_DATE_STR = '20221004'
-AND OCD.USER_ID = 'yamdeng';
+/* 포탈 > 팀원 : 금일 출근 정보 (17p) */
+SELECT
+	a.*
+	,u.user_name as user_name
+	,u.dept_key as dept_key
+	,d.dept_name as dept_name
+	,r.rank_title as rank_title
+	,du.duty_title as duty_title
+FROM OFFICE_COMMUTE_DAY a
+	left outer join TO0_USER_MAIN u
+		on u.user_key = a.user_id
+    left outer join TO0_DEPT_MAST d
+                on u.dept_key = d.dept_key
+    left outer join TO0_RANK_MAIN r
+                on u.rank_key = r.rank_key
+	left outer join TO0_DUTY_MAIN du
+                on du.duty_key = du.duty_key
+WHERE A.BASE_DATE_STR = '20221004'
+AND A.USER_ID = 'yamdeng';
 
-/* 포탈 팀원인 경우 : 현재 휴가 정보 (17p) */
+/* 포탈 > 팀원인 경우 : 현재 휴가 정보 (17p) */
 SELECT 
-    OVU.*
-FROM OFFICE6.OFFICE_VACATION_USER OVU
-WHERE OVU.USER_ID = 'yamdeng';
+    a.*
+FROM OFFICE_VACATION_YEAR a
+WHERE a.USER_ID = 'yamdeng';
 
-/* 포탈 팀원인 경우 : 출/퇴근 (17p) */
-UPDATE OFFICE6.OFFICE_COMMUTE_DAY
-SET START_WORK_DATE = #{startWorkDate}, START_WORK_IP = #{loginIp}, WORK_STATE_CODE = {workStateCode}
+/* 포탈 > 팀원 : 출/퇴근 액션 버튼 (17p) */
+select count(*) as cnt
+from OFFICE_COMMUTE_DAY
+where BASE_DATE_STR = '20221003' AND USER_ID = 'yamdeng';
+
+UPDATE OFFICE_COMMUTE_DAY
+SET START_WORK_DATE = NOW(), START_WORK_IP = '', WORK_STATUS_CODE = ''
 WHERE BASE_DATE_STR = '20221003' AND USER_ID = 'yamdeng';
 
-UPDATE OFFICE6.OFFICE_COMMUTE_DAY
-SET OUT_WORK_DATE = #{outWorkDate}, START_WORK_IP = #{loginIp}, WORK_STATE_CODE = {workStateCode}
-WHERE BASE_DATE_STR = '20221003' AND USER_ID = 'yamdeng'
+UPDATE OFFICE_COMMUTE_DAY
+SET OUT_WORK_DATE = NOW(), OUT_WORK_IP = '', WORK_STATUS_CODE = ''
+WHERE BASE_DATE_STR = '20221003' AND USER_ID = 'yamdeng';
 
 /* 포탈 팀원인 경우 : 팀원 근무 현황 (17p) */
 SELECT 

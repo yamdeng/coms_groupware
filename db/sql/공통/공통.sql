@@ -1,17 +1,3 @@
--- 프로필
--- 식별정보, 이름, 부서식별정보, 부서명, 직급식별정보, 직급명 
-
-select *
-from TO0_USER_MAIN u
-    left outer join TO0_DEPT_MAST d
-                on u.dept_key = dept_key
-    left outer join TO0_RANK_MAIN r
-                on u.rank_key = r.rank_key;
-    
-TO0_USER_MAIN : 사용자
-TO0_DEPT_MAST : 부서
-TO0_RANK_MAIN : 직책
-
 -- 하위 부서 전체 목록 가져오기
 with recursive dept_child_list(dept_key, dept_name, upper_dept_key) as (
 	select a.dept_key, a.upper_dept_key, a.dept_name
@@ -24,6 +10,25 @@ with recursive dept_child_list(dept_key, dept_name, upper_dept_key) as (
 )
 select dept_key, dept_name, upper_dept_key
 from dept_child_list;
+
+-- 프로필
+-- 식별정보, 이름, 부서식별정보, 부서명, 직급식별정보, 직급명 
+
+select a.*
+	,u.user_name as user_name
+	,u.dept_key as dept_key
+	,d.dept_name as dept_name
+	,r.rank_title as rank_title
+	,du.duty_title as duty_title
+from 
+	left outer join TO0_USER_MAIN u
+		on u.user_key = a.user_id
+    left outer join TO0_DEPT_MAST d
+                on u.dept_key = d.dept_key
+    left outer join TO0_RANK_MAIN r
+                on u.rank_key = r.rank_key
+	left outer join TO0_DUTY_MAIN du
+                on du.duty_key = du.duty_key
 
 -- 읽지 않은 알림 수
 
@@ -40,6 +45,3 @@ from dept_child_list;
 -- 금일 팀 근무 현황 목록
 
 -- 휴가/휴직 현황
-
-
-
