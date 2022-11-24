@@ -212,8 +212,8 @@ CREATE TABLE OFFICE_WORK_REPORT
 COMMENT ON TABLE OFFICE_WORK_REPORT IS '업무보고';
 
 comment on column OFFICE_WORK_REPORT.REPORT_ID is '업부보고_ID';
-comment on column OFFICE_WORK_REPORT.BASE_DATE_STR is '업부보고_ID';
-comment on column OFFICE_WORK_REPORT.REPORT_DATE is '업부보고_ID';
+comment on column OFFICE_WORK_REPORT.BASE_DATE_STR is '보고기준일';
+comment on column OFFICE_WORK_REPORT.REPORT_DATE is '보고일(작성일)';
 comment on column OFFICE_WORK_REPORT.USER_ID is '작성자';
 comment on column OFFICE_WORK_REPORT.DEPT_ID is '부서';
 comment on column OFFICE_WORK_REPORT.REPORT_CONTENT is '보고내용';
@@ -241,6 +241,7 @@ CREATE TABLE OFFICE_COMMUTE_DAY
   OUT_WORK_IP VARCHAR(50),
   OUTSIDE_WORK_YN CHAR(1),
   WORK_STATUS_CODE VARCHAR(50),
+  WORK_RESULT_CODE VARCHAR(50),
   VACATION_KIND_CODE VARCHAR(50),
   ETC_DESCRIPTION VARCHAR(4000),
   MOD_YN CHAR(1),
@@ -264,6 +265,7 @@ comment on column OFFICE_COMMUTE_DAY.START_WORK_IP is '출근IP';
 comment on column OFFICE_COMMUTE_DAY.OUT_WORK_IP is '퇴근IP';
 comment on column OFFICE_COMMUTE_DAY.OUTSIDE_WORK_YN is '외근여부';
 comment on column OFFICE_COMMUTE_DAY.WORK_STATUS_CODE is '근무상태';
+comment on column OFFICE_COMMUTE_DAY.WORK_RESULT_CODE is '근무결과';
 comment on column OFFICE_COMMUTE_DAY.VACATION_KIND_CODE is '휴가종류';
 comment on column OFFICE_COMMUTE_DAY.ETC_DESCRIPTION is '기타설명';
 comment on column OFFICE_COMMUTE_DAY.MOD_YN is '수정여부';

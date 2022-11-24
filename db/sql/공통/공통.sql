@@ -14,6 +14,8 @@ from dept_child_list;
 -- 프로필
 -- 식별정보, 이름, 부서식별정보, 부서명, 직급식별정보, 직급명 
 
+/* 등록일 */
+
 select a.*
 	,u.user_name as user_name
 	,u.dept_key as dept_key

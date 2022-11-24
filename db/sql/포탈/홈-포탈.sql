@@ -1,4 +1,4 @@
-/* 포탈 > 팀원 : 금일 출근 정보 (17p) */
+/* 포탈 > 팀원 : 1.금일 출근 정보 (17p) */
 SELECT
 	a.*
 	,u.user_name as user_name
