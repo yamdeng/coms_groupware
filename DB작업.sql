@@ -4,11 +4,13 @@ from information_schema.columns
 where table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position;
 
+
 -- select column 소문자 추출
 select concat(',', lower(column_name), ' AS ', lower(column_name))
 from information_schema.columns
 where table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position;
+
 
 -- 컬럼 낙타표기법 추출
 SELECT concat(',', column_name, ' AS ', (lower(substring(pascal_case,1,1)) || substring(pascal_case,2))) AS camel_case
@@ -25,6 +27,7 @@ SELECT column_name
 FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo;
+
 
 -- mybatis select 절 추출
 select concat(',', upper(a.column_name), ' AS ', upper(a.column_name), ' /* ', b.COLUMN_COMMENT, ' */')
@@ -43,6 +46,7 @@ from information_schema.columns a
 			on a.column_name = b.column_name
 where a.table_name = lower('OFFICE_COMMUTE_DAY')
 order by a.ordinal_position;
+
 
 -- java vo 멤버변수 추출
 SELECT concat(
@@ -76,6 +80,7 @@ FROM information_schema.columns a
 WHERE a.table_name = lower('OFFICE_COMMUTE_DAY')
 order by a.ordinal_position) As data_type_comment;
 
+
 -- java_type, column_name, camel_case 별도 추출
 SELECT java_type, column_name, lower(substring(pascal_case,1,1)) || substring(pascal_case,2) As camel_case
 FROM (
@@ -92,6 +97,7 @@ FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo;
 
+
 -- java type 별도 추출
 select CASE WHEN data_type in('character', 'character varying') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
@@ -102,6 +108,7 @@ select CASE WHEN data_type in('character', 'character varying') THEN 'String'
             END AS worker_name
 FROM information_schema.columns
 WHERE table_name = lower('OFFICE_CODE_MASTER')
+
 
 -- java 멤버 변수 추출(커멘트 제거)
 SELECT concat('private ', java_type, ' ', (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)), ';') as java_vo_string
@@ -119,3 +126,43 @@ FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo;
 
+
+-- select column pure : insert
+select concat(',', upper(column_name))
+from information_schema.columns
+where table_name = lower('OFFICE_COMMUTE_DAY')
+order by ordinal_position;
+
+
+-- 컬럼 낙타표기법 추출 : insert
+SELECT concat(',', '${', (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)), '}') AS camel_case
+FROM (
+SELECT column_name
+	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
+	,CASE WHEN data_type in('character', 'character varying') THEN 'String'
+			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
+			WHEN data_type in('numeric') THEN 'Double'
+			WHEN data_type in('integer') THEN 'Intger'
+            ELSE
+             	''
+            END AS java_type
+FROM information_schema.columns
+WHERE table_name = lower('OFFICE_COMMUTE_DAY')
+order by ordinal_position) As foo;
+
+
+-- 컬럼 낙타표기법 추출 : update
+SELECT concat(',', column_name, ' = ${', (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)), '}') AS camel_case
+FROM (
+SELECT column_name
+	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
+	,CASE WHEN data_type in('character', 'character varying') THEN 'String'
+			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
+			WHEN data_type in('numeric') THEN 'Double'
+			WHEN data_type in('integer') THEN 'Intger'
+            ELSE
+             	''
+            END AS java_type
+FROM information_schema.columns
+WHERE table_name = lower('OFFICE_COMMUTE_DAY')
+order by ordinal_position) As foo;
