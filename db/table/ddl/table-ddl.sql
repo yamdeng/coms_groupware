@@ -1,22 +1,22 @@
 -- drop table all
-drop table OFFICE_WORK_HOLIDAY;
-drop table OFFICE_LOGIN_TOKEN;
-drop table OFFICE_DEPT_WORK_TIME_SETTING;
-drop table OFFICE_COMMUTE_DEPT_DAY;
-drop table OFFICE_PUSH_ALARM;
-drop table OFFICE_WORK_REPORT_COMMENT;
-drop table OFFICE_WORK_REPORT;
-drop table OFFICE_COMMUTE_DAY;
-drop table OFFICE_CODE_MASTER;
-drop table OFFICE_COMMUTE_MONTH_D_STATS;
-drop table OFFICE_COMMUTE_MONTH_H_STATS;
-drop table OFFICE_COMMUTE_WEEK_STATS;
-drop table OFFICE_VACATION_MONTH_STATS;
-drop table OFFICE_VACATION_DETAIL;
-drop table OFFICE_VACATION_YEAR_PREVIEW;
-drop table OFFICE_VACATION_YEAR;
-drop table OFFICE_VACATION_PLUS_PREVIEW;
-drop table OFFICE_VACATION_PLUS;
+drop table OFFICE_WORK_HOLIDAY; /* 공휴일 */
+drop table OFFICE_LOGIN_TOKEN; /* 로그인토큰 */
+drop table OFFICE_DEPT_WORK_TIME_SETTING; /* 부서별_근무_시간_관리 */
+drop table OFFICE_COMMUTE_DEPT_DAY; /* 부서별_출퇴근제출 */
+drop table OFFICE_PUSH_ALARM; /* 알람 */
+drop table OFFICE_WORK_REPORT_COMMENT; /* 업무보고_댓글 */
+drop table OFFICE_WORK_REPORT; /* 업무보고 */
+drop table OFFICE_COMMUTE_DAY; /* 출퇴근_일일 */
+drop table OFFICE_CODE_MASTER; /* 코드마스터 */
+drop table OFFICE_COMMUTE_MONTH_D_STATS; /* 통계_출퇴근_월간_주별 */
+drop table OFFICE_COMMUTE_MONTH_H_STATS; /* 통계_출퇴근_월간_휴일 */
+drop table OFFICE_COMMUTE_WEEK_STATS; /* 통계_출퇴근_주간 */
+drop table OFFICE_VACATION_MONTH_STATS; /* 통계_휴가_월별_사용현황 */
+drop table OFFICE_VACATION_DETAIL; /* 휴가_휴직_상세 */
+drop table OFFICE_VACATION_YEAR_PREVIEW; /* 휴가_휴직_현황(연별)_미리보기 */
+drop table OFFICE_VACATION_YEAR; /* 휴가_휴직_현황(연별)_미리보기 */
+drop table OFFICE_VACATION_PLUS_PREVIEW; /* 휴가_휴직_현황(포상휴가)_미리보기 */
+drop table OFFICE_VACATION_PLUS; /* 휴가_휴직_현황(포상휴가)_미리보기 */
 
 
 -- "공휴일" 테이블 DDL
