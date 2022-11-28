@@ -71,7 +71,7 @@ WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo;
 
 -- update 파라미터 매핑 : ,#{baseDateStr}
-SELECT concat(',', column_name, ' = ${', (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)), '}') AS camel_case
+SELECT concat(',', column_name, ' = #{', (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)), '}') AS camel_case
 FROM (
 SELECT column_name
 	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
