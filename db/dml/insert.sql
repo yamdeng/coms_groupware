@@ -5,6 +5,13 @@ INSERT INTO office_commute_day(
 	VALUES ('20221126', 'yamdeng', now(), now(), now(), null, '10.1.0.0', '10.1.0.0', 'Y', 'STATUS1', 'RESULT1', 'VACATION1',
 			'DESC', 'Y', 'N', 8.2, NOW(), NOW(), 'system', 'system');
 
+INSERT INTO office_commute_day(
+	base_date_str, user_id, start_work_date, out_work_date, final_start_work_date, final_out_work_date,
+	start_work_ip, out_work_ip, outside_work_yn, work_status_code, work_result_code, vacation_kind_code,
+	etc_description, mod_yn, tardy_yn, worked_time_value, reg_date, mod_date, reg_user_id, mod_user_id)
+	VALUES ('20221203', 'yamdeng', now(), now(), now(), null, '10.1.0.0', '10.1.0.0', 'Y', 'HOME_ING', 'SUCCESS_MORNING', 'VACATION_MORNING',
+			'DESC', 'Y', 'N', 8.2, NOW(), NOW(), 'system', 'system');
+
 delete from to0_user_main;
 delete from to0_rank_main;
 delete from to0_duty_main;
@@ -218,3 +225,4 @@ INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort
 	VALUES ('REPORT_STATUS', 'APPROVE', '승인', 2);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('REPORT_STATUS', 'REJECT', '반려', 3);
+

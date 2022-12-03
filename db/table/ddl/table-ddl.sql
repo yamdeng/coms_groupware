@@ -14,9 +14,9 @@ drop table OFFICE_COMMUTE_WEEK_STATS; /* 통계_출퇴근_주간 */
 drop table OFFICE_VACATION_MONTH_STATS; /* 통계_휴가_월별_사용현황 */
 drop table OFFICE_VACATION_DETAIL; /* 휴가_휴직_상세 */
 drop table OFFICE_VACATION_YEAR_PREVIEW; /* 휴가_휴직_현황(연별)_미리보기 */
-drop table OFFICE_VACATION_YEAR; /* 휴가_휴직_현황(연별)_미리보기 */
+drop table OFFICE_VACATION_YEAR; /* 휴가_휴직_현황(연별) */
 drop table OFFICE_VACATION_PLUS_PREVIEW; /* 휴가_휴직_현황(포상휴가)_미리보기 */
-drop table OFFICE_VACATION_PLUS; /* 휴가_휴직_현황(포상휴가)_미리보기 */
+drop table OFFICE_VACATION_PLUS; /* 휴가_휴직_현황(포상휴가) */
 drop table OFFICE_BATCH_HISTORY; /* 배치 히스토리 */
 
 
