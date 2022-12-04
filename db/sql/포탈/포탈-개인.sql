@@ -1,7 +1,7 @@
 /* 
 
     구분 : 로그인한 사용자의 출퇴근 상세정보 : 출퇴근 상세정보의 기준이됨 
-    id : selectCommuteInfoByUserId
+    id : selectCommuteInfoByUserId : CommuteMapper.xml
     조건 파라미터
      -기준일자 : baseDateStr
      -로그인한 사용자의 ID : userId
@@ -57,7 +57,7 @@ WHERE  a.base_date_str = '20221126'
 /* 
 
     구분 : 출근 
-    id : startWork 
+    id : startWork : CommuteMapper.xml
     조건 파라미터
      -기준일자 : baseDateStr
      -사용자IP : startWorkIp
@@ -80,7 +80,7 @@ WHERE base_date_str = '20221203' and user_id = 'yamdeng';
 /* 
 
     구분 : 퇴근 
-    id : outWork 
+    id : outWork : CommuteMapper.xml
     조건 파라미터
      -기준일자 : baseDateStr
      -사용자IP : outWorkIp
@@ -104,7 +104,7 @@ WHERE base_date_str = '20221203' and user_id = 'yamdeng';
 /* 
 
     구분 : 로그인한 사용자의 소속 팀원의 출퇴근 상세정보
-    id : selectCommuteListByDeptKey
+    id : selectCommuteListByDeptKey : CommuteMapper.xml
     조건 파라미터
      -기준일자 : baseDateStr
      -부서키 : deptKey
@@ -161,7 +161,7 @@ LIMIT  2;
 /* 
 
     구분 : 로그인한 사용자의 휴가/휴직(연별) 상세정보
-    id : selectVacationInfoByUserId
+    id : selectVacationInfoByUserId : VacationMapper.xml
     조건 파라미터
      -기준일자 : baseYear
      -로그인한 사용자의 ID : userId

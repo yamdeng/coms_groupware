@@ -144,9 +144,13 @@ INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('WORK_STATUS', 'VACATION_PRIZE', '포상휴가', 10);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_STATUS', 'VACATION_ETC', '기타휴가', 11);
+	VALUES ('WORK_STATUS', 'VACATION_BABY', '출산휴가', 11);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_STATUS', 'VACATION_BABY', '출산휴가', 12);
+	VALUES ('WORK_STATUS', 'VACATION_CARE', '육아휴직', 12);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WORK_STATUS', 'VACATION_NORMAL', '일반휴직', 13);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WORK_STATUS', 'VACATION_ETC', '기타휴가', 99);
 
 -- 코드 : 출퇴근결과
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
@@ -168,21 +172,23 @@ INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('WORK_RESULT', 'VACATION_YEAR', '연차', 9);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_RESULT', 'VACATION_PRIZE', '포상휴가', 10);
+	VALUES ('WORK_RESULT', 'VACATION_NATION', '공가', 10);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_RESULT', 'VACATION_CON', '경조휴가', 11);
+	VALUES ('WORK_RESULT', 'VACATION_REPLACE', '대체휴가', 11);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_RESULT', 'VACATION_NATION', '공가', 12);
+	VALUES ('WORK_RESULT', 'VACATION_CON', '경조휴가', 12);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_RESULT', 'VACATION_REPLACE', '대체휴가', 13);
+	VALUES ('WORK_RESULT', 'VACATION_PRIZE', '포상휴가', 13);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('WORK_RESULT', 'VACATION_BABY', '출산휴가', 14);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_RESULT', 'VACATION_NORMAL', '일반휴직', 15);
+	VALUES ('WORK_RESULT', 'VACATION_CARE', '육아휴직', 15);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_RESULT', 'VACATION_CARE', '육아휴직', 16);
+	VALUES ('WORK_RESULT', 'VACATION_NORMAL', '일반휴직', 16);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('WORK_RESULT', 'ABSENT', '결근', 17);	
+	VALUES ('WORK_RESULT', 'VACATION_ETC', '기타휴가', 17);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WORK_RESULT', 'ABSENT', '결근', 18);	
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('WORK_RESULT', 'ETC', '기타', 99);
 
@@ -204,11 +210,11 @@ INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('VACATION_KIND', 'VACATION_BABY', '출산휴가', 8);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('VACATION_KIND', 'VACATION_NORMAL', '일반휴직', 9);
+	VALUES ('VACATION_KIND', 'VACATION_CARE', '육아휴직', 9);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('VACATION_KIND', 'VACATION_CARE', '육아휴직', 10);
+	VALUES ('VACATION_KIND', 'VACATION_NORMAL', '일반휴직', 10);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('VACATION_KIND', 'ETC', '기타', 99);
+	VALUES ('VACATION_KIND', 'VACATION_ETC', '기타휴가', 99);
 
 -- 코드 : 부서 출퇴근 제출 상태
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
