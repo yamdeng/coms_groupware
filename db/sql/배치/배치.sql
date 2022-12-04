@@ -43,3 +43,10 @@ SELECT a.user_id             AS user_id /* 직원ID */
 FROM   office_vacation_detail_day_history a
 WHERE  base_date_str = '20221203'
        AND user_id = 'yamdeng'; 
+
+/* 
+
+    구분 : 출퇴근_일일 insert
+    id : insertCommute : CommuteMapper.xml
+
+*/

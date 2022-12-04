@@ -160,6 +160,7 @@ comment on column OFFICE_PUSH_ALARM.ALARM_TITLE is '제목';
 comment on column OFFICE_PUSH_ALARM.ALARM_CONTENT is '내용';
 comment on column OFFICE_PUSH_ALARM.ALARM_KIND_CODE is '알림구분(공지, 출퇴근)';
 comment on column OFFICE_PUSH_ALARM.REG_DATE is '등록일';
+comment on column OFFICE_PUSH_ALARM.READ_DATE is '읽은날짜';
 comment on column OFFICE_PUSH_ALARM.LINK_YN is '링크여부';
 comment on column OFFICE_PUSH_ALARM.LINK_URL is '링크URL';
 comment on column OFFICE_PUSH_ALARM.TARGET_ID is '대상ID';
