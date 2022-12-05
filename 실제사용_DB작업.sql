@@ -24,7 +24,7 @@ SELECT concat(
 FROM (
 SELECT a.column_name
 	,replace(initcap(replace(a.column_name, '_', ' ')), ' ', '') As pascal_case
-	,CASE WHEN a.data_type in('character', 'character varying') THEN 'String'
+	,CASE WHEN a.data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN a.data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN a.data_type in('numeric') THEN 'Double'
 			WHEN a.data_type in('integer') THEN 'Intger'
@@ -59,7 +59,7 @@ SELECT concat(',', '#{', (lower(substring(pascal_case,1,1)) || substring(pascal_
 FROM (
 SELECT column_name
 	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
-	,CASE WHEN data_type in('character', 'character varying') THEN 'String'
+	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
 			WHEN data_type in('integer') THEN 'Intger'
@@ -75,7 +75,7 @@ SELECT concat(',', column_name, ' = #{', (lower(substring(pascal_case,1,1)) || s
 FROM (
 SELECT column_name
 	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
-	,CASE WHEN data_type in('character', 'character varying') THEN 'String'
+	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
 			WHEN data_type in('integer') THEN 'Intger'
@@ -97,7 +97,7 @@ SELECT column_name, (lower(substring(pascal_case,1,1)) || substring(pascal_case,
 FROM (
 SELECT column_name
 	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
-	,CASE WHEN data_type in('character', 'character varying') THEN 'String'
+	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
 			WHEN data_type in('integer') THEN 'Intger'
@@ -119,7 +119,7 @@ SELECT (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)) AS camel_
 FROM (
 SELECT column_name
 	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
-	,CASE WHEN data_type in('character', 'character varying') THEN 'String'
+	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
 			WHEN data_type in('integer') THEN 'Intger'
@@ -141,7 +141,7 @@ SELECT column_name, (lower(substring(pascal_case,1,1)) || substring(pascal_case,
 FROM (
 SELECT column_name
 	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
-	,CASE WHEN data_type in('character', 'character varying') THEN 'String'
+	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
 			WHEN data_type in('integer') THEN 'Intger'
