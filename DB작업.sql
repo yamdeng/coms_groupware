@@ -157,8 +157,8 @@ FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo;
 
--- insert if null check : 하단 부분 : "를 치환 후에 다시 .eqauls()를 .equals("")로 치환
-select concat('<if test=', '''', camel_case, ' != null and !', camel_case, '.eqauls("")', '''', '>',
+-- insert if null check : 하단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환
+select concat('<if test=', '''', camel_case, ' != null and !', camel_case, '.equals("")', '''', '>',
 			  chr(10),
 			  ',', '#{', camel_case, '}',
 			  chr(10),
@@ -179,8 +179,8 @@ FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo ) as camel_foo;
 
--- insert if null check : 상단 부분 : "를 치환 후에 다시 .eqauls()를 .equals("")로 치환
-select concat('<if test=', '''', camel_case, ' != null and !', camel_case, '.eqauls("")', '''', '>',
+-- insert if null check : 상단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환
+select concat('<if test=', '''', camel_case, ' != null and !', camel_case, '.equals("")', '''', '>',
 			  chr(10),
 			  ',', column_name,
 			  chr(10),
@@ -201,8 +201,8 @@ FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo ) as camel_foo;
 
--- update if null check : 상단 부분 : "를 치환 후에 다시 .eqauls()를 .equals("")로 치환
-select concat('<if test=', '''', camel_case, ' != null and !', camel_case, '.eqauls("")', '''', '>',
+-- update if null check : 상단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환
+select concat('<if test=', '''', camel_case, ' != null and !', camel_case, '.equals("")', '''', '>',
 			  chr(10),
 			  ',', column_name, ' = ', '#{', camel_case, '}',
 			  chr(10),

@@ -232,3 +232,47 @@ INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('REPORT_STATUS', 'REJECT', '반려', 3);
 
+
+-- 코드 : 요일구분 코드
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKDAY', 'MON', '월요일', 1);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKDAY', 'TUE', '화요일', 2);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKDAY', 'WED', '수요일', 3);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKDAY', 'THU', '목요일', 4);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKDAY', 'FRI', '금요일', 5);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKDAY', 'SAT', '토요일', 6);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKDAY', 'SUN', '일요일', 7);
+
+-- 코드 : 주중/주말구분 코드
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKEND', 'WEEKDAY', '주중', 1);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEKEND', 'WEEKEND', '주말', 2);
+
+-- 코드 : 푸쉬 알림 코드
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_NOTICE', '공지사항', 1);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_COMMUTE_PRIVATE', '개인출퇴근', 2);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_COMMUTE_MANAGER', '팀장의팀원출퇴근', 3);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_COMMUTE_DEPT_SUBMIT', '부서출퇴근제출', 4);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_COMMUTE_DEPT_REJECT', '부서출퇴근반려', 5);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_REPORT_SUBMIT', '부서업무보고제출', 6);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_REPORT_COMMENT', '부서업무보고댓글', 7);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_REPORT_ISSUE', '부서업무보고이슈', 8);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_COMMUTE_DEPT_SUBMIT_COMPLETE', '부서출퇴근제출완료', 9);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('ALARM', 'ALARM_REPORT_SUBMIT_COMPLETE', '부서업무보고제출완료', 10);

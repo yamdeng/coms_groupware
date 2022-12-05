@@ -50,3 +50,20 @@ WHERE  base_date_str = '20221203'
     id : insertCommute : CommuteMapper.xml
 
 */
+
+
+SELECT a.alarm_id         AS alarm_id /* 알림_ID */
+       ,a.base_date_str   AS base_date_str /* 기준일 */
+       ,a.user_id         AS user_id /* 대상_사용자_ID */
+       ,a.alarm_title     AS alarm_title /* 제목 */
+       ,a.alarm_content   AS alarm_content /* 내용 */
+       ,a.alarm_kind_code AS alarm_kind_code /* 알림구분(공지, 출퇴근) */
+       ,a.reg_date        AS reg_date /* 등록일 */
+       ,a.link_yn         AS link_yn /* 링크여부 */
+       ,a.link_url        AS link_url /* 링크URL */
+       ,a.target_id       AS target_id /* 대상ID */
+       ,a.mod_date        AS mod_date /* 수정일 */
+FROM   office_push_alarm a
+WHERE  base_date_str = '20221203'
+       AND user_id = 'yamdeng'
+       AND alarm_kind_code = 'ALARM_NOTICE'; 
