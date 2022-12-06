@@ -27,7 +27,7 @@ SELECT a.column_name
 	,CASE WHEN a.data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN a.data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN a.data_type in('numeric') THEN 'Double'
-			WHEN a.data_type in('integer') THEN 'Intger'
+			WHEN a.data_type in('integer') THEN 'Integer'
             ELSE
              	''
             END AS java_type
@@ -62,7 +62,7 @@ SELECT column_name
 	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
-			WHEN data_type in('integer') THEN 'Intger'
+			WHEN data_type in('integer') THEN 'Integer'
             ELSE
              	''
             END AS java_type
@@ -78,7 +78,7 @@ SELECT column_name
 	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
-			WHEN data_type in('integer') THEN 'Intger'
+			WHEN data_type in('integer') THEN 'Integer'
             ELSE
              	''
             END AS java_type
@@ -100,7 +100,7 @@ SELECT column_name
 	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
-			WHEN data_type in('integer') THEN 'Intger'
+			WHEN data_type in('integer') THEN 'Integer'
             ELSE
              	''
             END AS java_type
@@ -122,7 +122,7 @@ SELECT column_name
 	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
-			WHEN data_type in('integer') THEN 'Intger'
+			WHEN data_type in('integer') THEN 'Integer'
             ELSE
              	''
             END AS java_type
@@ -144,7 +144,7 @@ SELECT column_name
 	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
 			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
 			WHEN data_type in('numeric') THEN 'Double'
-			WHEN data_type in('integer') THEN 'Intger'
+			WHEN data_type in('integer') THEN 'Integer'
             ELSE
              	''
             END AS java_type
