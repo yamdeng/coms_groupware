@@ -276,3 +276,29 @@ INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort
 	VALUES ('ALARM', 'COMMUTE_DEPT_SUBMIT_COMPLETE', '부서출퇴근제출완료', 9);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('ALARM', 'REPORT_SUBMIT_COMPLETE', '부서업무보고제출완료', 10);
+
+-- 코드 : 출퇴근 통계 종류
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('COMMUTE_SUMMARY_STATS_KIND', 'WEEK', '주간', 1);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('COMMUTE_SUMMARY_STATS_KIND', 'MONTH_WEEK', '월간(주별)', 2);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('COMMUTE_SUMMARY_STATS_KIND', 'MONTH_HOLIDAY', '월간(휴일)', 3);
+
+-- 코드 : 하루 근무시간 기준(8)
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('DAY_NORMAL_WORK_TIME_BASE', 'LESS', '근무시간 8시간 미만', 1);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('DAY_NORMAL_WORK_TIME_BASE', 'GREATER', '근무시간 8시간 초과', 2);
+
+-- 코드 : 일주일 근무시간 기준(52)
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEK_NORMAL_WORK_TIME_BASE', 'LESS', '근무시간 주 52시간 미만', 1);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('WEEK_NORMAL_WORK_TIME_BASE', 'GREATER', '근무시간 주 52시간 초과', 2);
+
+-- 코드 : 포상휴가 부여 기준
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('PRIZE_VACATION_YEAR', '1', '입사일 기준 1년 이상인 직원', 1);
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('PRIZE_VACATION_YEAR', '10', '입사일 기준 10년 이상인 직원', 2);
