@@ -89,3 +89,42 @@ BEGIN
 END;
 $$
 LANGUAGE plpgsql;
+
+
+-- 입사일 기준으로 근속년수 가져오기 : fn_get_continue_year
+create or replace function public.fn_get_continue_year(p_base_year varchar, p_enter_date_str varchar)
+returns integer AS
+$$
+    declare v_result integer := 0;
+	declare v_base_year_number integer := 0;
+	declare v_enter_year_number integer := 0;
+	declare v_enter_monthday_str varchar := '';
+BEGIN
+	
+	-- 기준년 문자열을 숫자로 변환 : p_base_year ---> integer로 변환
+	SELECT CAST(p_base_year AS integer) INTO v_base_year_number;
+	
+	-- 입사일 문자열을 년도 숫자로 변환 : p_enter_date_str ---> integer로 변환
+	SELECT CAST(substring(p_enter_date_str :: VARCHAR, 1, 4) AS integer) INTO v_enter_year_number;
+	
+	-- 입사일 문자열을 MMDD 형식으로 변환 ---> p_enter_date_str
+	select substring(p_enter_date_str :: VARCHAR, 5, 4) INTO v_enter_monthday_str;
+	
+	-- 1월1일 경우는 입사일의 이전년도 기준으로 근속연수를 계산함
+	IF v_enter_monthday_str = '0101' THEN
+		v_enter_year_number :=  v_enter_year_number - 1;
+	END IF;
+	
+	-- 근속연수 계산
+	v_result := v_base_year_number - v_enter_year_number - 1;
+	
+	IF v_result < 0 THEN
+		v_result := 0;
+	END IF;
+
+    return v_result;
+
+END;
+$$
+LANGUAGE plpgsql;
+
