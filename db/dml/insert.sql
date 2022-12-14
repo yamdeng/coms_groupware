@@ -302,3 +302,10 @@ INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort
 	VALUES ('PRIZE_VACATION_YEAR', '1', '입사일 기준 1년 이상인 직원', 1);
 INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('PRIZE_VACATION_YEAR', '10', '입사일 기준 10년 이상인 직원', 2);
+
+-- 코드 : 배치종류
+INSERT INTO public.office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('BATCH_KIND', 'COMMUTE_DAY', '일일 출퇴근 적재', 1);
+
+
+	
