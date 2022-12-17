@@ -128,3 +128,17 @@ END;
 $$
 LANGUAGE plpgsql;
 
+-- substring custom: fn_app_substring
+create or replace function public.fn_app_substring(p_str varchar, p_start_number integer, p_end_number integer)
+returns varchar AS
+$$
+    declare v_result varchar := '';
+BEGIN
+
+	select substring(p_str :: VARCHAR, p_start_number, p_end_number) into v_result;
+
+    return v_result;
+
+END;
+$$
+LANGUAGE plpgsql;
