@@ -182,3 +182,71 @@ SELECT column_name
 FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo ) as camel_foo;
+
+-- insert if null check : 상단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환 : ibatis
+select concat('<isNotNull property=', '''', camel_case, '''', '>',
+			  chr(10),
+			  ',', column_name,
+			  chr(10),
+			 '</isNotNull>') as mybatis_text
+from (
+SELECT column_name, (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)) AS camel_case
+FROM (
+SELECT column_name
+ 	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
+	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
+			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
+			WHEN data_type in('numeric') THEN 'Double'
+			WHEN data_type in('integer') THEN 'Integer'
+            ELSE
+             	''
+            END AS java_type
+FROM information_schema.columns
+WHERE table_name = lower('OFFICE_COMMUTE_DAY')
+order by ordinal_position) As foo ) as camel_foo;
+
+
+-- insert if null check : 하단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환 : ibatis
+select concat('<isNotNull property=', '''', camel_case, '''', '>',
+			  chr(10),
+			  ',', '#', camel_case, '#',
+			  chr(10),
+			 '</isNotNull>') as mybatis_text
+from (
+SELECT (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)) AS camel_case
+FROM (
+SELECT column_name
+	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
+	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
+			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
+			WHEN data_type in('numeric') THEN 'Double'
+			WHEN data_type in('integer') THEN 'Integer'
+           ELSE
+            	''
+           END AS java_type
+FROM information_schema.columns
+WHERE table_name = lower('OFFICE_COMMUTE_DAY')
+order by ordinal_position) As foo ) as camel_foo;
+
+
+-- update if null check : 상단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환 : ibatis
+select concat('<isNotNull property=', '''', camel_case, '''', '>',
+			  chr(10),
+			  ',', column_name, ' = ', '#', camel_case, '#',
+			  chr(10),
+			 '</isNotNull>') as mybatis_text
+from (
+SELECT column_name, (lower(substring(pascal_case,1,1)) || substring(pascal_case,2)) AS camel_case
+FROM (
+SELECT column_name
+	,replace(initcap(replace(column_name, '_', ' ')), ' ', '') As pascal_case
+	,CASE WHEN data_type in('character', 'character varying', 'text') THEN 'String'
+			WHEN data_type in('timestamp without time zone', 'timestamp') THEN 'LocalDateTime'
+			WHEN data_type in('numeric') THEN 'Double'
+			WHEN data_type in('integer') THEN 'Integer'
+            ELSE
+             	''
+            END AS java_type
+FROM information_schema.columns
+WHERE table_name = lower('OFFICE_COMMUTE_DAY')
+order by ordinal_position) As foo ) as camel_foo;
