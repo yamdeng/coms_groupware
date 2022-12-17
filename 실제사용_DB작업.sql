@@ -184,7 +184,12 @@ WHERE table_name = lower('OFFICE_COMMUTE_DAY')
 order by ordinal_position) As foo ) as camel_foo;
 
 -- insert if null check : 상단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환 : ibatis
-select concat('<isNotNull property=', '''', camel_case, '''', '>',
+select concat('<isNotNull property=', '''',
+		  (CASE WHEN camel_case in('regUserId', 'modUserId') THEN 'loginUserId'
+            ELSE
+             	camel_case
+            END),
+			  '''', '>',
 			  chr(10),
 			  ',', column_name,
 			  chr(10),
@@ -202,14 +207,25 @@ SELECT column_name
              	''
             END AS java_type
 FROM information_schema.columns
-WHERE table_name = lower('OFFICE_COMMUTE_DAY')
+WHERE table_name = lower('office_commute_day')
+	and column_name not in ('reg_date', 'mod_date')
 order by ordinal_position) As foo ) as camel_foo;
 
 
 -- insert if null check : 하단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환 : ibatis
-select concat('<isNotNull property=', '''', camel_case, '''', '>',
+select concat('<isNotNull property=', '''',
+			  (CASE WHEN camel_case in('regUserId', 'modUserId') THEN 'loginUserId'
+				ELSE
+					camel_case
+				END),
+			  '''', '>',
 			  chr(10),
-			  ',', '#', camel_case, '#',
+			  ',', '#',
+			  (CASE WHEN camel_case in('regUserId', 'modUserId') THEN 'loginUserId'
+				ELSE
+					camel_case
+				END),
+			  '#',
 			  chr(10),
 			 '</isNotNull>') as mybatis_text
 from (
@@ -226,13 +242,24 @@ SELECT column_name
            END AS java_type
 FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
+	and column_name not in ('reg_date', 'mod_date')
 order by ordinal_position) As foo ) as camel_foo;
 
 
 -- update if null check : 상단 부분 : "를 치환 후에 다시 .equals()를 .equals("")로 치환 : ibatis
-select concat('<isNotNull property=', '''', camel_case, '''', '>',
+select concat('<isNotNull property=', '''',
+			  (CASE WHEN camel_case in('modUserId') THEN 'loginUserId'
+				ELSE
+					camel_case
+				END),
+			  '''', '>',
 			  chr(10),
-			  ',', column_name, ' = ', '#', camel_case, '#',
+			  ',', column_name, ' = ', '#',
+			  (CASE WHEN camel_case in('modUserId') THEN 'loginUserId'
+				ELSE
+					camel_case
+				END),
+			   '#',
 			  chr(10),
 			 '</isNotNull>') as mybatis_text
 from (
@@ -249,4 +276,5 @@ SELECT column_name
             END AS java_type
 FROM information_schema.columns
 WHERE table_name = lower('OFFICE_COMMUTE_DAY')
+	and column_name not in ('reg_date', 'mod_date', 'reg_user_id')
 order by ordinal_position) As foo ) as camel_foo;
