@@ -16,6 +16,22 @@ $$
 LANGUAGE plpgsql;
 
 
+-- substring custom: fn_app_substring
+create or replace function public.fn_app_substring(p_str varchar, p_start_number integer, p_end_number integer)
+returns varchar AS
+$$
+    declare v_result varchar := '';
+BEGIN
+
+	select substring(p_str :: VARCHAR, p_start_number, p_end_number) into v_result;
+
+    return v_result;
+
+END;
+$$
+LANGUAGE plpgsql;
+
+
 -- 다음평일 날짜 가져오기 : fn_get_after_workdate
 create or replace function public.fn_get_after_workdate(p_base_date_str varchar)
 returns varchar AS
@@ -121,21 +137,6 @@ BEGIN
 	IF v_result < 0 THEN
 		v_result := 0;
 	END IF;
-
-    return v_result;
-
-END;
-$$
-LANGUAGE plpgsql;
-
--- substring custom: fn_app_substring
-create or replace function public.fn_app_substring(p_str varchar, p_start_number integer, p_end_number integer)
-returns varchar AS
-$$
-    declare v_result varchar := '';
-BEGIN
-
-	select substring(p_str :: VARCHAR, p_start_number, p_end_number) into v_result;
 
     return v_result;
 
