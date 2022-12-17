@@ -30,6 +30,21 @@ BEGIN
 END
 
 
+-- to_char custom : fn_app_to_char
+drop function fn_app_to_char;
+CREATE FUNCTION [dbo].[fn_app_to_char](@p_datetime datetime, @p_dateformat varchar(255))
+RETURNS VARCHAR(255)
+AS
+BEGIN
+	
+    DECLARE @v_result VARCHAR(255);
+
+   select @v_result = FORMAT(@p_datetime, @p_dateformat);
+
+    RETURN @v_result;
+END
+
+
 -- 다음평일 날짜 가져오기 : fn_get_after_workdate
 drop function fn_get_after_workdate;
 CREATE FUNCTION [dbo].[fn_get_after_workdate](@p_base_date_str VARCHAR(255))

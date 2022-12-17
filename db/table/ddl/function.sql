@@ -16,7 +16,7 @@ $$
 LANGUAGE plpgsql;
 
 
--- substring custom: fn_app_substring
+-- substring custom : fn_app_substring
 create or replace function public.fn_app_substring(p_str varchar, p_start_number integer, p_end_number integer)
 returns varchar AS
 $$
@@ -24,6 +24,23 @@ $$
 BEGIN
 
 	select substring(p_str :: VARCHAR, p_start_number, p_end_number) into v_result;
+
+    return v_result;
+
+END;
+$$
+LANGUAGE plpgsql;
+
+
+-- to_char custom : fn_app_to_char
+drop function fn_app_to_char;
+create or replace function public.fn_app_to_char(p_datetime timestamp, p_dateformat varchar)
+returns varchar AS
+$$
+    declare v_result varchar := '';
+BEGIN
+
+	select to_char(p_datetime, p_dateformat) into v_result;
 
     return v_result;
 
