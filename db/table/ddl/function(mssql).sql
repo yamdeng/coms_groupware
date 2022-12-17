@@ -45,6 +45,21 @@ BEGIN
 END
 
 
+-- to_timestamp custom : fn_app_to_timestamp
+drop function fn_app_to_timestamp;
+CREATE FUNCTION [dbo].[fn_app_to_timestamp](@p_datestr varchar(255))
+RETURNS DATETIME
+AS
+BEGIN
+	
+    DECLARE @v_result DATETIME;
+
+   select @v_result = CONVERT(DATETIME, @p_datestr)
+
+    RETURN @v_result;
+END
+
+
 -- 다음평일 날짜 가져오기 : fn_get_after_workdate
 drop function fn_get_after_workdate;
 CREATE FUNCTION [dbo].[fn_get_after_workdate](@p_base_date_str VARCHAR(255))

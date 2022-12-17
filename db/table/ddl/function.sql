@@ -49,6 +49,23 @@ $$
 LANGUAGE plpgsql;
 
 
+-- to_timestamp custom : fn_app_to_timestamp
+drop function fn_app_to_timestamp;
+create or replace function public.fn_app_to_timestamp(p_datestr varchar)
+returns timestamp AS
+$$
+    declare v_result timestamp;
+BEGIN
+
+	select to_timestamp(p_datestr, 'YYYY-MM-DD H24:MI:SS') into v_result;
+
+    return v_result;
+
+END;
+$$
+LANGUAGE plpgsql;
+
+
 -- 다음평일 날짜 가져오기 : fn_get_after_workdate
 create or replace function public.fn_get_after_workdate(p_base_date_str varchar)
 returns varchar AS
