@@ -51,13 +51,30 @@ LANGUAGE plpgsql;
 
 -- to_timestamp custom : fn_app_to_timestamp
 drop function fn_app_to_timestamp;
-create or replace function public.fn_app_to_timestamp(p_datestr varchar)
-returns timestamp AS
+create or replace function public.fn_app_to_date(p_datestr varchar)
+returns date AS
 $$
-    declare v_result timestamp;
+    declare v_result date;
 BEGIN
 
-	select to_timestamp(p_datestr, 'YYYY-MM-DD H24:MI:SS') into v_result;
+	select to_date(p_datestr, 'YYYYMMDD') into v_result;
+
+    return v_result;
+
+END;
+$$
+LANGUAGE plpgsql;
+
+
+-- to_date custom : fn_app_to_date
+drop function fn_app_to_date;
+create or replace function public.fn_app_to_date(p_datestr varchar)
+returns date AS
+$$
+    declare v_result date;
+BEGIN
+
+	select to_date(p_datestr, 'YYYYMMDD') into v_result;
 
     return v_result;
 
