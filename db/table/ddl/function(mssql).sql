@@ -18,7 +18,7 @@ END
 -- substring custom: fn_app_substring
 drop function fn_app_substring;
 CREATE FUNCTION [dbo].[fn_app_substring](@p_str VARCHAR(255), @p_start_number INTEGER, @p_end_number INTEGER)
-RETURNS VARCHAR
+RETURNS VARCHAR(255)
 AS
 BEGIN
 	
