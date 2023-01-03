@@ -90,6 +90,8 @@ INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
 INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('VACATION_KIND', 'VACATION_NORMAL', '일반휴직', 10);
 INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('VACATION_KIND', 'VACATION_BIRTHDAY', '생일', 11);
+INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('VACATION_KIND', 'VACATION_ETC', '기타휴가', 99);
 
 -- 코드 : 부서 출퇴근 제출 상태
