@@ -98,17 +98,21 @@ INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
 INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('COMMUTE_DEPT_STATUS', 'SUBMIT', '제출', 1);
 INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('COMMUTE_DEPT_STATUS', 'APPROVE', '승인', 2);
+	VALUES ('COMMUTE_DEPT_STATUS', 'NOT_SUBMIT', '미제출', 2);
 INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('COMMUTE_DEPT_STATUS', 'REJECT', '반려', 3);
+	VALUES ('COMMUTE_DEPT_STATUS', 'APPROVE', '승인', 3);
+INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('COMMUTE_DEPT_STATUS', 'REJECT', '반려', 4);
 	
 -- 코드 : 업무보고 제출 상태
 INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
 	VALUES ('REPORT_STATUS', 'SUBMIT', '제출', 1);
 INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('REPORT_STATUS', 'APPROVE', '승인', 2);
+	VALUES ('REPORT_STATUS', 'NOT_SUBMIT', '미제출', 2);
 INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
-	VALUES ('REPORT_STATUS', 'REJECT', '반려', 3);
+	VALUES ('REPORT_STATUS', 'APPROVE', '승인', 3);
+INSERT INTO office_code_master(group_code_id, code_value, code_name, sort_index)
+	VALUES ('REPORT_STATUS', 'REJECT', '반려', 4);
 
 
 -- 코드 : 요일구분 코드
