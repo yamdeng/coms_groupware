@@ -198,8 +198,10 @@ CREATE TABLE OFFICE_COMMUTE_DAY
   TARDY_YN CHAR(1) DEFAULT 'N',
   HOLIDAY_YN CHAR(1) DEFAULT 'N',
   DEPT_SUBMIT_YN CHAR(1) DEFAULT 'N',
+  IN_WORK_YN CHAR(1),
   WORKED_TIME_VALUE NUMERIC(5, 1),
   START_WORK_DEVICE_TYPE CHAR(1),
+  OUT_WORK_DEVICE_TYPE CHAR(1),
   REG_DATE TIMESTAMP DEFAULT NOW(),
   MOD_DATE TIMESTAMP DEFAULT NOW(),
   REG_USER_ID VARCHAR(50),
@@ -226,8 +228,10 @@ comment on column OFFICE_COMMUTE_DAY.RESULT_MOD_YN is '근태결과수정여부'
 comment on column OFFICE_COMMUTE_DAY.TARDY_YN is '지각여부';
 comment on column OFFICE_COMMUTE_DAY.HOLIDAY_YN is '공휴일여부';
 comment on column OFFICE_COMMUTE_DAY.DEPT_SUBMIT_YN is '부서출퇴근제출여부';
+comment on column OFFICE_COMMUTE_DAY.IN_WORK_YN is '업무중(Y), 재택중(N)';
 comment on column OFFICE_COMMUTE_DAY.WORKED_TIME_VALUE is '근무시간';
 comment on column OFFICE_COMMUTE_DAY.START_WORK_DEVICE_TYPE is '출근 디바이스 유형(P/M)';
+comment on column OFFICE_COMMUTE_DAY.OUT_WORK_DEVICE_TYPE is '퇴근 디바이스 유형(P/M)';
 comment on column OFFICE_COMMUTE_DAY.REG_DATE is '등록일';
 comment on column OFFICE_COMMUTE_DAY.MOD_DATE is '수정일';
 comment on column OFFICE_COMMUTE_DAY.REG_USER_ID is '등록자ID';
